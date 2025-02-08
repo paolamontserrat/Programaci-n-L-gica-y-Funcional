@@ -5,10 +5,10 @@ fizzbuzz n
     | n `mod` 15 == 0 = "FizzBuzz!"
     | n `mod` 5  == 0 = "Fizz!"
     | n `mod` 3  == 0 = "Buzz!"
-    | otherwise       = numberToWords n
+    | otherwise       = numeroEnLetra n
 
-numberToWords :: Int -> String
-numberToWords n
+numeroEnLetra :: Int -> String
+numeroEnLetra n
     | n > 0 && n < 20 = lessThan20 n
     | n >= 20 && n < 100 =
         let (t, u) = (n `div` 10, n `mod` 10)
