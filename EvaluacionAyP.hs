@@ -18,8 +18,10 @@ numero n
     | n < 100 && n `mod` 10 == 0 = decenas (n `div` 10)
     | n < 100 = decenas (n `div` 10) ++ " y " ++ unicos (n `mod` 10)
     | n < 1000 && n `mod` 100 == 0 = centenas (n `div` 100)
+    | n `div` 100 == 1 = centenas (n `div` 100) ++ "to " ++ numero (n `mod` 100)
     | n < 1000 = centenas (n `div` 100) ++ " " ++ numero (n `mod` 100)
     | n == 1000 = "mil"
+    | n `div` 1000 == 1 = "mil " ++ numero (n `mod` 1000)
     | n < 1000000 && n `mod` 1000 == 0 = numero (n `div` 1000) ++ " mil"
     | n < 1000000 = numero (n `div` 1000) ++ " mil " ++ numero (n `mod` 1000)
     | otherwise = "un millon"
